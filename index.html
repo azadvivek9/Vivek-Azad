@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/sidemenu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div class="div1">
+      <div class="leftdiv">
+        <div class="logodiv">
+          <img src="../img/logo.png" alt="" />
+          <a href="dashboard.html">MediQuick</a>
+        </div>
+        <div class="vertical-menu">
+          <i
+            class="fa-solid fa-chart-line fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="#" class="active">Dashboard</a>
+          <i
+            class="fa-solid fa-capsules fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="medicine.html">Medicine</a>
+          <i
+            class="fa-solid fa-cubes-stacked fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="stock.html">Stock</a>
+          <i
+            class="fa-solid fa-users fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="customer.html">Customer</a>
+          <i
+            class="fa-brands fa-wpexplorer fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="order.html">Order</a>
+          <i
+            class="fa-solid fa-file-medical fa-xl"
+            style="position: relative; top: 30px; left: 30px; color: #ffffff"
+          ></i
+          ><a href="order_details.html">Order Details</a>
+        </div>
+      </div>
+ 
+      <div class="rightdiv">
+        <div class="upper_div">
+          <p class="date_time">
+            Today's Date: <span id="formattedDate"></span>
+          </p>
+          <input type="text" placeholder="Search For anything here. " />
+          <div class="rdiv">
+            <p>Vivek Azad</p>
+            <img id="user" src="../img/DP.jpg" alt="" />
+          </div>
+        </div>
+        <div class="profile" id="profile">
+          <img src="../img/DP.jpg" alt="" />
+          <h4>Vivek Azad</h4>
+          <p>azadvivek27@gmail.com</p>
+          <a href="login.html"> Logout</a>
+        </div>
+
+        <div class="lower_div">
+          <h2>Dashboard ></h2>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#user").click(function () {
+          $("#profile").toggle();
+        });
+      });
+  
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, "0");
+      const month = String(today.getMonth() + 1).padStart(2, "0"); 
+      const year = today.getFullYear();
+      const formattedDate = `${day}-${month}-${year}`;
+      document.getElementById("formattedDate").textContent = formattedDate;
+    </script>
+  </body>
+</html>
